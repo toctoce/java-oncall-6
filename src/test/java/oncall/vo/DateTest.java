@@ -1,6 +1,7 @@
 package oncall.vo;
 
 import java.time.DayOfWeek;
+import oncall.vo.date.Date;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
