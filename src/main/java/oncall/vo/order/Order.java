@@ -18,6 +18,19 @@ public record Order(List<String> nicknames) {
         return new Order(nicknames);
     }
 
+    public String get(int index) {
+        return nicknames.get(index);
+    }
+
+    public int indexOf(String nickname) {
+        return nicknames.indexOf(nickname);
+    }
+
+    public String next(String nickname) {
+        int curIndex = indexOf(nickname);
+        return get((curIndex + 1) % size());
+    }
+
     private static void validate(List<String> nicknames) {
         for (String nickname : nicknames) {
             validateNickname(nickname);
@@ -63,5 +76,9 @@ public record Order(List<String> nicknames) {
 
     private Set<String> getNicknameSet() {
         return Set.copyOf(nicknames);
+    }
+
+    public int size() {
+        return nicknames.size();
     }
 }

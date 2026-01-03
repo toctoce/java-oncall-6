@@ -19,7 +19,7 @@ public record Date(int month, int dayOfMonth, DayOfWeek dayOfWeek, boolean isHol
             List.of(12, 25)
     );
 
-    private Date(int month, int dayOfMonth, DayOfWeek dayOfWeek) {
+    public Date(int month, int dayOfMonth, DayOfWeek dayOfWeek) {
         this(month, dayOfMonth, dayOfWeek, HOLIDAYS.contains(List.of(month, dayOfMonth)));
     }
 
@@ -28,6 +28,10 @@ public record Date(int month, int dayOfMonth, DayOfWeek dayOfWeek, boolean isHol
             return null;
         }
         return new Date(month, dayOfMonth + 1, dayOfWeek.plus(1));
+    }
+
+    public boolean isDayOff() {
+        return dayOfWeek == DayOfWeek.SATURDAY || dayOfWeek == DayOfWeek.SUNDAY || isHoliday;
     }
 
     @Override
