@@ -224,9 +224,6 @@ BUILD SUCCESSFUL in 0s
 
 ## 구현할 기능
 
-- calendar
-    - [ ] 월, 시작요일로 생성자
-    - [ ] 공휴일인지 체크
 - order
     - [x] List<String> 으로 구성
     - [x] 순번 입력으로 생성자
@@ -242,11 +239,12 @@ BUILD SUCCESSFUL in 0s
     - [x] 월, 일, 요일, 공휴일 여부를 가지고 있는 레코드
     - [x] 다음날
 - schedule
-    - [ ] date, order로 스케줄 생성
-        - [ ] 1차 순번 생성
-        - [ ] 1차 순번을 가공하여 최종 순번 생성
+    - [x] date, order로 스케줄 생성
+        - [x] 1차 순번 생성
+        - [x] 1차 순번을 가공하여 최종 순번 생성
 - controller
     - [ ] 입력 -> 서비스
+    - [ ] 에러일 경우 출력 후 다시 입력받기
 - service
     - [ ] 월, 요일 -> date 생성
     - [ ] 순번 입력으로 order 생성
