@@ -1,7 +1,9 @@
 package oncall.vo.date;
 
 import java.time.DayOfWeek;
+import java.time.format.TextStyle;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 public record Date(int month, int dayOfMonth, DayOfWeek dayOfWeek, boolean isHoliday) {
@@ -26,5 +28,10 @@ public record Date(int month, int dayOfMonth, DayOfWeek dayOfWeek, boolean isHol
             return null;
         }
         return new Date(month, dayOfMonth + 1, dayOfWeek.plus(1));
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%d월 %d일 %s", month, dayOfMonth, dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.KOREAN));
     }
 }
