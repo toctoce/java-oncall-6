@@ -8,9 +8,9 @@ class OrdersTest {
 
     @Test
     void from() {
-        Orders orders = Orders.from("봉구스,찹쌀,킹콩,킹킹콩,킹킹킹콩", "찹쌀,봉구스,킹킹콩,킹콩,킹킹킹콩");
         Order workday = Order.from("봉구스,찹쌀,킹콩,킹킹콩,킹킹킹콩");
         Order dayOff = Order.from("찹쌀,봉구스,킹킹콩,킹콩,킹킹킹콩");
+        Orders orders = Orders.from(workday, dayOff);
         assertThat(orders.workday()).isEqualTo(workday);
         assertThat(orders.dayOff()).isEqualTo(dayOff);
     }
